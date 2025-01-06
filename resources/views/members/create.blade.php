@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h2 style="text-align: center; font-family: serif;">Tambah Anggota</h2>
+
+    <form action="{{ route('members.store') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="name_members" class="form-label">Nama</label>
+            <input type="text" name="name_members" id="name_members" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email_members" class="form-label">Email</label>
+            <input type="email" name="email_members" id="email_members" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone_members" class="form-label">Nomor Telepon</label>
+            <input type="text" name="phone_members" id="phone_members" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="address_members" class="form-label">Alamat</label>
+            <input type="text" name="address_members" id="address_members" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </form>
+</div>
+@endsection
